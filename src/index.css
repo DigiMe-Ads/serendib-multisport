@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+
+  --color-ink: #05060d;
+  --color-night: #0a0f2c;
+  --color-electric: #2f5bff;
+  --color-volt: #3ee883;
+  --color-blaze: #ff6a13;
+  --color-sky: #19d3ff;
+  --color-leaf: #6cc24a;
+  --color-kaya: #e07b33;
+  --color-mist: #a9b1d6;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+  }
+  ::selection {
+    @apply bg-volt text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-volt;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .text-outline {
+    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+  .grain {
+    background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
