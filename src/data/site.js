@@ -21,11 +21,13 @@ export const ABOUT_COPY = {
   body: 'As the official licensee of IRONMAN, we bring world-class races to our island. Events that unite athletes, inspire communities, and showcase Sri Lanka as a destination for global sport.',
 }
 
+const BASE = import.meta.env.BASE_URL
+
 export const MEDIA = {
-  heroVideo: '/videos/serendib-multisport-endurance-runner-training-sri-lanka.mp4',
-  heroPoster: '/images/serendib-multisport-endurance-runner-training-poster.webp',
-  finishLine: '/images/ironman-70-3-colombo-triathlete-finish-line-run.webp',
-  bikeCourse: '/images/ironman-70-3-colombo-cyclists-bike-course-galle-face.webp',
-  ironkids: '/images/ironkids-colombo-2026-children-running-race-start.webp',
-  kayaMap: '/images/sri-lanka-wellness-active-lifestyle-illustrated-map.webp',
+  heroVideo: `${BASE}videos/serendib-multisport-endurance-runner-training-sri-lanka.mp4`,
+  heroPoster: `${BASE}images/serendib-multisport-endurance-runner-training-poster.webp`,
+  finishLine: `${BASE}images/ironman-70-3-colombo-triathlete-finish-line-run.webp`,
+  bikeCourse: `${BASE}images/ironman-70-3-colombo-cyclists-bike-course-galle-face.webp`,
+  ironkids: `${BASE}images/ironkids-colombo-2026-children-running-race-start.webp`,
+  kayaMap: `${BASE}images/sri-lanka-wellness-active-lifestyle-illustrated-map.webp`,
 }
